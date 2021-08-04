@@ -254,35 +254,6 @@ export class EufySecurityPlatform implements DynamicPlatformPlugin {
           config,
         );
         break;
-      case DeviceType.MOTION_SENSOR:
-        new MotionSensorAccessory(this, accessory, device as MotionSensor);
-        break;
-      case DeviceType.CAMERA:
-      case DeviceType.CAMERA2:
-      case DeviceType.CAMERA2C:
-      case DeviceType.CAMERA2C_PRO:
-      case DeviceType.CAMERA2_PRO:
-      case DeviceType.CAMERA_E:
-      case DeviceType.FLOODLIGHT:
-      case DeviceType.INDOOR_CAMERA:
-      case DeviceType.INDOOR_CAMERA_1080:
-      case DeviceType.INDOOR_PT_CAMERA:
-      case DeviceType.INDOOR_PT_CAMERA_1080:
-      case DeviceType.SOLO_CAMERA:
-      case DeviceType.SOLO_CAMERA_PRO:
-        new CameraAccessory(this, accessory, device as Camera);
-        break;
-      case DeviceType.DOORBELL:
-      case DeviceType.BATTERY_DOORBELL:
-      case DeviceType.BATTERY_DOORBELL_2:
-        new DoorbellCameraAccessory(this, accessory, device as DoorbellCamera);
-        break;
-      case DeviceType.SENSOR:
-        new EntrySensorAccessory(this, accessory, device as EntrySensor);
-        break;
-      case DeviceType.KEYPAD:
-        new KeypadAccessory(this, accessory, device as Keypad);
-        break;
       default:
         this.log.info(
           'This accessory is not compatible with this plugin:',
