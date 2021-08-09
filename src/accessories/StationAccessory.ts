@@ -61,6 +61,13 @@ export class StationAccessory {
 
     this.service
       .getCharacteristic(this.platform.Characteristic.SecuritySystemTargetState)
+      .setProps({
+        validValues: [
+          Characteristic.SecuritySystemTargetState.AWAY_ARM,
+          Characteristic.SecuritySystemTargetState.STAY_ARM,
+          Characteristic.SecuritySystemTargetState.DISARM
+        ]
+      })
       .on('get', this.handleSecuritySystemTargetStateGet.bind(this))
       .on('set', this.handleSecuritySystemTargetStateSet.bind(this));
 

@@ -32,6 +32,13 @@ class StationAccessory {
             .on('get', this.handleSecuritySystemCurrentStateGet.bind(this));
         this.service
             .getCharacteristic(this.platform.Characteristic.SecuritySystemTargetState)
+            .setProps({
+            validValues: [
+                Characteristic.SecuritySystemTargetState.AWAY_ARM,
+                Characteristic.SecuritySystemTargetState.STAY_ARM,
+                Characteristic.SecuritySystemTargetState.DISARM
+            ]
+        })
             .on('get', this.handleSecuritySystemTargetStateGet.bind(this))
             .on('set', this.handleSecuritySystemTargetStateSet.bind(this));
         this.eufyStation.on('guard mode', (station, guardMode) => this.onStationGuardModePushNotification(station, guardMode));

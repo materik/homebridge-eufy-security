@@ -117,3 +117,5 @@ web_modules/
 
 .npmrc
 .history
+
+.DS_Store
